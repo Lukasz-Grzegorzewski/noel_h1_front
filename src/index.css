@@ -1,0 +1,31 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
+/* width */
+.scrollbar-hide::-webkit-scrollbar {
+
+  width: 10px;
+}
+
+/* Track */
+.scrollbar-hide::-webkit-scrollbar-track {
+  background: #e47979;
+}
+
+/* Handle */
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background: #ea0606;
+}
+
+/* Handle on hover */
+.scrollbar-hide::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+*{
+  font-family: 'Bradley hand';
+  letter-spacing: 1px;
+}
