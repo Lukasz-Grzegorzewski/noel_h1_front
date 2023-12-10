@@ -8,7 +8,7 @@ const AudioPlayer = ({ audioData, filePath }) => {
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    const date = new Date(Number(filePath.split("_")[1].split(".")[0]));
+    const date = filePath ? new Date(Number(filePath.split("_")[1].split(".")[0])) : new Date();
     setTime(date.toLocaleString());
     const audioUrl = URL.createObjectURL(audioData);
     // setAudioPlayer(URL.createObjectURL(audioData));
@@ -18,7 +18,6 @@ const AudioPlayer = ({ audioData, filePath }) => {
       // Set the playback rate to change the pitch
       const playbackRate = 1.5; // Adjust this value to change the pitch
       player.playbackRate = playbackRate;
-      console.log(player);
     });
     setAudioPlayer(player);
   }, [audioData]);
@@ -40,7 +39,7 @@ const AudioPlayer = ({ audioData, filePath }) => {
           >
             <div className="scale-50">
               <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" fill-rule="evenodd">
+                <g fill="none" fillRule="evenodd">
                   <circle fill="#00A0FF" cx="30" cy="30" r="30" />
                   <path
                     d="M43.625 29.803L23.646 17.426C22.189 16.474 21 17.173 21 18.988V43.01c0 1.812 1.188 2.518 2.646 1.562l19.979-12.375s.711-.5.711-1.197c0-.7-.711-1.198-.711-1.198z"
